@@ -1,0 +1,18 @@
+Package: CauchyGM
+Title: A Robust Genetic Model based SNP-set Test
+Version: 0.1
+Authors@R: 
+    person("Yeonil", "Kim", , "yeonil.kim@merck.com", role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: This package provides a robust genetic model based SNP-set testing procedure. 
+License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
+    license
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
+LinkingTo: 
+    Rcpp
+Imports: 
+    Rcpp, MASS, SKAT
+Depends: 
+    R (>= 3.6.3)
