@@ -7,7 +7,6 @@
 #' @param null_obj an object that includes model parameters and residuals of the null model (i.e., there are no genetic effects on the outcome phenotypes). Please run CauchyGM_Null to get this object. 
 #' @param out_type an indicator of the outcome type. 'C' for the continuous outcome and 'D' for the dichotomous outcome. 
 #' @return A list of numeric vectors/matrices that contains score statistics (U) for each subject and SNP and that include the variance of the score statistics.
-#' @import MASS
 #' @author Yeonil Kim
 
 

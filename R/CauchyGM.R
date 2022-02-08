@@ -12,6 +12,8 @@
 #' @author Yeonil Kim
 #' @useDynLib CauchyGM
 #' @importFrom Rcpp sourceCpp
+#' @import MASS
+#' @import SKAT
 #' @export
 
 
