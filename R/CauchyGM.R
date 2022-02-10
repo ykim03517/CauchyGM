@@ -18,8 +18,8 @@
 
 
 
-CauchyGM <- function(data, method = "CauchyGM", out_type = "D", int = 0.5, weights.beta = c(1,
-    1), Cauchy_Null, SKAT_Null) {
+CauchyGM <- function(data, method = "CauchyGM", out_type = "D", int = 0.5, weights.beta = c(1, 1), Cauchy_Null,
+    SKAT_Null) {
 
     seqC <- seq(0, 1, by = int)
     y <- data$Y
@@ -65,8 +65,7 @@ CauchyGM <- function(data, method = "CauchyGM", out_type = "D", int = 0.5, weigh
 
         if (L[c] == p) {
 
-            burden_pval = SKAT(as.matrix(2 * grid.g[, c, ]), SKAT_Null, weights.beta = c(1,
-                25), r.corr = 1)$p.value
+            burden_pval = SKAT(as.matrix(2 * grid.g[, c, ]), SKAT_Null, weights.beta = c(1, 25), r.corr = 1)$p.value
             pval = c(pval, burden_pval)
 
             ind[, c] <- 0
@@ -90,8 +89,7 @@ CauchyGM <- function(data, method = "CauchyGM", out_type = "D", int = 0.5, weigh
                 score = colSums(U_V[[1]])^2/U_V[[2]]
                 pval = c(pval, 1 - pchisq(score, 1))
 
-                burden_pval = SKAT(as.matrix(2 * grid.g_rare), SKAT_Null, weights.beta = c(1,
-                  25), r.corr = 1)$p.value
+                burden_pval = SKAT(as.matrix(2 * grid.g_rare), SKAT_Null, weights.beta = c(1, 25), r.corr = 1)$p.value
                 pval = c(pval, burden_pval)
             }
 
@@ -108,8 +106,7 @@ CauchyGM <- function(data, method = "CauchyGM", out_type = "D", int = 0.5, weigh
     for (c in 1:m) {
 
         if (L[c] != 0) {
-            MAF_temp <- c(MAF_add[which(ind[, c] != 0)], mean(MAF_add[which(ind[, c] ==
-                0)]))
+            MAF_temp <- c(MAF_add[which(ind[, c] != 0)], mean(MAF_add[which(ind[, c] == 0)]))
             MAF_out <- c(MAF_out, MAF_temp)
 
         } else {
@@ -135,8 +132,7 @@ CauchyGM <- function(data, method = "CauchyGM", out_type = "D", int = 0.5, weigh
 
         if (outcome == "D") {
             pval_SKAT = SKATBinary(as.matrix(g), SKAT_Null, weights.beta = c(1, 1))$p.value
-            pval_burden = SKATBinary(as.matrix(g), SKAT_Null, weights.beta = c(1, 1),
-                r.corr = 1)$p.value
+            pval_burden = SKATBinary(as.matrix(g), SKAT_Null, weights.beta = c(1, 1), r.corr = 1)$p.value
         } else if (outcome == "C") {
             pval_SKAT = SKAT(as.matrix(g), SKAT_Null, weights.beta = c(1, 1))$p.value
             pval_burden = SKAaT(as.matrix(g), SKAT_Null, weights.beta = c(1, 1), r.corr = 1)$p.value
@@ -155,12 +151,10 @@ CauchyGM <- function(data, method = "CauchyGM", out_type = "D", int = 0.5, weigh
 
 
 
-# design.Z <- model.matrix(null_model, data$Z)[, -1] if (outcome == 'D') {
-# SKAT_Null <- SKAT_Null_Model_MomentAdjust(data$Y ~ design.Z, type.Resampling =
-# 'bootstrap.fast') } else if (outcome == 'C') { # SKAT_Null <-
-# SKAT_Null_Model(data$Y ~ design.Z, out_type = outcome) SKAT_Null <-
-# SKAT_Null_Model(data$Y ~ design.Z, out_type = outcome, type.Resampling =
-# 'bootstrap.fast') }
+# design.Z <- model.matrix(null_model, data$Z)[, -1] if (outcome == 'D') { SKAT_Null <-
+# SKAT_Null_Model_MomentAdjust(data$Y ~ design.Z, type.Resampling = 'bootstrap.fast') } else if
+# (outcome == 'C') { # SKAT_Null <- SKAT_Null_Model(data$Y ~ design.Z, out_type = outcome) SKAT_Null <-
+# SKAT_Null_Model(data$Y ~ design.Z, out_type = outcome, type.Resampling = 'bootstrap.fast') }
 
 
 
