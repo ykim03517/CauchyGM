@@ -45,7 +45,7 @@ Cauchy_Null_model <- function(formula, data, out_type = "D") {
         }
     }
 
-    null <- lm_null
+    null <- list(fitted = lm_null$fitted, residuals = lm_null$residuals)
 
     return(null)
 

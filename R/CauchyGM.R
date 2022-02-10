@@ -153,8 +153,8 @@ CauchyGM <- function(data, method = "CauchyGM", out_type = "D", int = 0.5, weigh
 
 # design.Z <- model.matrix(null_model, data$Z)[, -1] if (outcome == 'D') { SKAT_Null <-
 # SKAT_Null_Model_MomentAdjust(data$Y ~ design.Z, type.Resampling = 'bootstrap.fast') } else if
-# (outcome == 'C') { # SKAT_Null <- SKAT_Null_Model(data$Y ~ design.Z, out_type = outcome) SKAT_Null <-
-# SKAT_Null_Model(data$Y ~ design.Z, out_type = outcome, type.Resampling = 'bootstrap.fast') }
+# (outcome == 'C') { # SKAT_Null <- SKAT_Null_Model(data$Y ~ design.Z, out_type = outcome) SKAT_Null
+# <- SKAT_Null_Model(data$Y ~ design.Z, out_type = outcome, type.Resampling = 'bootstrap.fast') }
 
 
 
