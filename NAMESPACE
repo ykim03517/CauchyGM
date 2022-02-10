@@ -3,6 +3,7 @@
 export(CauchyGM)
 export(Cauchy_Null_model)
 export(MAF)
+export(eff_Score)
 import(MASS)
 import(Rcpp)
 import(SKAT)
