@@ -22,3 +22,4 @@ NumericMatrix gridG(NumericVector g, NumericVector seqx) {
     
 }
 
+//' @export
