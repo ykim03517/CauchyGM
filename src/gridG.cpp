@@ -1,8 +1,9 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
+//' @export
 // [[Rcpp::export]]
-NumericMatrix gridG(NumericVector g, NumericVector seqx) {
+NumericMatrix gridG(Rcpp::NumericVector g, Rcpp::NumericVector seqx) {
     int n = g.length();
     int p = seqx.length();
     NumericMatrix X(n,p);
@@ -22,4 +23,4 @@ NumericMatrix gridG(NumericVector g, NumericVector seqx) {
     
 }
 
-//' @export
+

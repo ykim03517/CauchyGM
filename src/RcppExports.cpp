@@ -11,13 +11,13 @@ Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
 // gridG
-NumericMatrix gridG(NumericVector g, NumericVector seqx);
+NumericMatrix gridG(Rcpp::NumericVector g, Rcpp::NumericVector seqx);
 RcppExport SEXP _CauchyGM_gridG(SEXP gSEXP, SEXP seqxSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< NumericVector >::type g(gSEXP);
-    Rcpp::traits::input_parameter< NumericVector >::type seqx(seqxSEXP);
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type g(gSEXP);
+    Rcpp::traits::input_parameter< Rcpp::NumericVector >::type seqx(seqxSEXP);
     rcpp_result_gen = Rcpp::wrap(gridG(g, seqx));
     return rcpp_result_gen;
 END_RCPP
