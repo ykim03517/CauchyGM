@@ -112,7 +112,8 @@ eff_Score <- function(y, G, Z = NULL, null_obj, out_type = "D") {
             s_b0_sq_i = resid^2
             s_b0_sq = sum(resid^2)
 
-            s_sigma_i = cbind((1/var) * s_b0_i, (-1/2) * (1/var) + (1/(2 * var^2)) * s_b0_sq_i)  # n x 2
+            s_sigma_i = cbind((1/var) * s_b0_i, (-1/2) * (1/var) + (1/(2 * var^2)) *
+                s_b0_sq_i)  # n x 2
 
             # I(beta1, sigma=c(beta0, var))
             I.1.1 = -(1/var) * colSums(G)
